@@ -9,6 +9,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  http: ^1.1.2
 
 dev_dependencies:
   flutter_test:
@@ -17,3 +18,19 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  assets:
+    - images/
+  
+  fonts:
+    - family: Poppins
+      fonts:
+        - asset: fonts/Poppins/Poppins-Regular.ttf
+    - family: Poppins-Regular
+      fonts:
+        - asset: fonts/Poppins/Poppins-Regular.ttf
+    - family: Poppins-SemiBold
+      fonts:
+        - asset: fonts/Poppins/Poppins-SemiBold.ttf
+    - family: Poppins-Medium
+      fonts:
+        - asset: fonts/Poppins/Poppins-Medium.ttf
