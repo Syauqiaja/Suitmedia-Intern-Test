@@ -26,7 +26,7 @@ class _SecondScreenState extends State<SecondScreen> {
       ),
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 24, vertical: 24),
+          padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 24),
           child: Column(
             children: [
               Row(
@@ -35,7 +35,7 @@ class _SecondScreenState extends State<SecondScreen> {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
+                      const Text(
                         "Welcome",
                         softWrap: true,
                       ),
@@ -70,7 +70,7 @@ class _SecondScreenState extends State<SecondScreen> {
                       style: ButtonStyle(
                         backgroundColor: MaterialStateColor.resolveWith((states) => MyColors.primary),
                       ),
-                      child: Text(
+                      child: const Text(
                         "Choose a user",
                         textAlign: TextAlign.center,
                         style: TextStyle(
@@ -89,13 +89,14 @@ class _SecondScreenState extends State<SecondScreen> {
     );
   }
   Future<void> _navigateAndDisplaySelection(BuildContext context) async{
-    final result = await Navigator.push(context, MaterialPageRoute(builder: (context) => ThirdScreen()));
+    final result = await Navigator.push(context, MaterialPageRoute(builder: (context) => const ThirdScreen()));
 
     if(!mounted) return;
 
-    if(result != null)
-    setState(() {
-      _selectedUsername = result;
-    });
+    if(result != null) {
+      setState(() {
+        _selectedUsername = result;
+      });
+    }
   }
 }

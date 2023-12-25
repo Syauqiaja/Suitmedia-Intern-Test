@@ -33,16 +33,16 @@ class _FirstScreenState extends State<FirstScreen> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  CircleAvatar(
+                  const CircleAvatar(
                     radius: 72,
+                    backgroundColor: Colors.white30,
                     child: Icon(
                       size : 72,
                       Icons.person_add_alt_1,
                       color: MyColors.white,
                     ),
-                    backgroundColor: Colors.white30,
                   ),
-                  SizedBox(height: 51,),
+                  const SizedBox(height: 51,),
                   Row(
                     children: [
                       Expanded(
@@ -58,7 +58,7 @@ class _FirstScreenState extends State<FirstScreen> {
                             fillColor: MyColors.white,
                             hintText: "Name",
                             hintStyle: Theme.of(context).textTheme.titleSmall?.copyWith(
-                              color: Color.fromARGB(104, 103, 119, 92)
+                              color: const Color.fromARGB(104, 103, 119, 92)
                             )
                           ),
                           onChanged: (value) => setState(() {
@@ -68,7 +68,7 @@ class _FirstScreenState extends State<FirstScreen> {
                       ),
                     ],
                   ),
-                  SizedBox(height: 15,),
+                  const SizedBox(height: 15,),
                   Row(
                     children: [
                       Expanded(
@@ -83,7 +83,7 @@ class _FirstScreenState extends State<FirstScreen> {
                             fillColor: MyColors.white,
                             hintText: "Palindrome",
                             hintStyle: Theme.of(context).textTheme.titleSmall?.copyWith(
-                              color: Color.fromARGB(104, 103, 119, 92)
+                              color: const Color.fromARGB(104, 103, 119, 92)
                             ),
                           ),
                           onChanged: (value){
@@ -95,7 +95,7 @@ class _FirstScreenState extends State<FirstScreen> {
                       ),
                     ],
                   ),
-                  SizedBox(height: 45,),
+                  const SizedBox(height: 45,),
                   Row(
                     children: [
                       Expanded(child: ElevatedButton(
@@ -104,9 +104,9 @@ class _FirstScreenState extends State<FirstScreen> {
                         },
                         style: ElevatedButton.styleFrom(
                           backgroundColor: MyColors.primary,
-                          padding: EdgeInsets.symmetric(vertical: 16)
+                          padding: const EdgeInsets.symmetric(vertical: 16)
                         ),
-                        child: Text(
+                        child: const Text(
                           "CHECK",
                           textAlign: TextAlign.center,
                           style: TextStyle(
@@ -118,7 +118,7 @@ class _FirstScreenState extends State<FirstScreen> {
                       ))
                     ],
                   ),
-                  SizedBox(height: 15,),
+                  const SizedBox(height: 15,),
                   Row(
                     children: [
                       Expanded(child: ElevatedButton(
@@ -129,9 +129,9 @@ class _FirstScreenState extends State<FirstScreen> {
                         },
                         style: ElevatedButton.styleFrom(
                           backgroundColor: MyColors.primary,
-                          padding: EdgeInsets.symmetric(vertical: 16)
+                          padding: const EdgeInsets.symmetric(vertical: 16)
                         ),
-                        child: Text(
+                        child: const Text(
                           "NEXT",
                           textAlign: TextAlign.center,
                           style: TextStyle(

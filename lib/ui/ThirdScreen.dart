@@ -107,17 +107,32 @@ class _ThirdScreenState extends State<ThirdScreen> {
         leading: CustomBackButton(context: context),
       ),
       body: Padding(
-        padding: EdgeInsets.symmetric(vertical: 16, horizontal: 24),
+        padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 24),
         child: _isFirstLoadRunning ? const Center(
           child: CircularProgressIndicator(),
         ) : ListView(
           controller: _scrollController,
           children: [
+            if(!_isFirstLoadRunning && _users.isEmpty)
+            Center(
+              child: Container(
+                padding: const EdgeInsets.all(16),
+                decoration: const BoxDecoration(
+                  color: Colors.black12,
+                  borderRadius: BorderRadius.all(Radius.circular(16))
+                ),
+                child: Text(
+                  "No users are currently registered",
+                  style: Theme.of(context).textTheme.titleLarge,
+                ),
+              ),
+            ),
+
             ListView.separated(
               itemCount: _users.length,
               shrinkWrap: true,
-              physics: ScrollPhysics(),
-              separatorBuilder: (context, index) => Divider(height: 1,),
+              physics: const ScrollPhysics(),
+              separatorBuilder: (context, index) => const Divider(height: 1),
               itemBuilder: (_,index){
                 return CardUser(
                   firstName: _users[index].firstName, 
@@ -168,7 +183,7 @@ class CardUser extends StatelessWidget {
         Navigator.pop(context, "$firstName $lastName");
       },
       child: Padding(
-        padding: EdgeInsets.symmetric(vertical: 16),
+        padding: const EdgeInsets.symmetric(vertical: 16),
         child: Row(
           children: [
             CircleAvatar(
@@ -176,7 +191,7 @@ class CardUser extends StatelessWidget {
               radius: 32
             ),
       
-            SizedBox(width: 8,),
+            const SizedBox(width: 8,),
       
             Expanded(
               child: Column(
@@ -186,10 +201,10 @@ class CardUser extends StatelessWidget {
                     "$firstName $lastName",
                     style: Theme.of(context).textTheme.titleMedium,
                   ),
-                  SizedBox(height: 8),
+                  const SizedBox(height: 8),
                   Text(
                     email,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 10,
                       color: Color.fromRGBO(104, 103, 119, 1)
                     ),
